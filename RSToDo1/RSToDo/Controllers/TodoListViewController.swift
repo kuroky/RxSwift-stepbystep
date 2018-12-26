@@ -16,8 +16,11 @@ enum SaveTodoError: Error {
     case cannotCreateFileOnCloud
 }
 
+private let maxTodoCount    =   5 // 最多新建5个待完成状态
+private let localFileName   =   "TodoList" // 本地文件名
+
 class TodoListViewController: UIViewController {
-    let maxTodoCount    =   5 // 最多新建5个待完成状态
+    
     var todoItems = Variable<[TodoItem]>([])
     
     @IBOutlet weak var tableView: UITableView!
@@ -139,7 +142,7 @@ class TodoListViewController: UIViewController {
     
     func syncTodoToCloud() -> Observable<URL> {
         return Observable.create({ observer in
-            guard let cloudUrl = self.ubiquityURL("Documents/TodoList") else {
+            guard let cloudUrl = self.ubiquityURL("Documents/\(localFileName)") else {
                 observer.onError(SaveTodoError.iCloudIsNotEnabled)
                 return Disposables.create()
             }
@@ -168,7 +171,7 @@ class TodoListViewController: UIViewController {
     }
     
     func dataFilePath() -> URL {
-        let path = documentsDirectory().appendingPathComponent("TodoList")
+        let path = documentsDirectory().appendingPathComponent(localFileName)
         return path
     }
     

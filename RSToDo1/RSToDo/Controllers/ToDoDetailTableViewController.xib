@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToDoDetailTableViewController" customModule="RSToDo" customModuleProvider="target">
             <connections>
+                <outlet property="memoButton" destination="hFV-tT-0oy" id="eOd-6J-MvO"/>
                 <outlet property="nameTextField" destination="xsj-Re-2WM" id="gIT-CG-Sk9"/>
                 <outlet property="statusLabel" destination="ohp-TM-OUK" id="XXA-yb-Afj"/>
                 <outlet property="statusSwitch" destination="k4w-fc-DOb" id="xAG-a1-tJk"/>
@@ -52,21 +53,20 @@
                         <constraint firstAttribute="height" constant="20" id="GGT-RE-6Xe"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.38431372549999998" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7T-La-aZH">
-                    <rect key="frame" x="15" y="275" width="330" height="20"/>
+                    <rect key="frame" x="15" y="190" width="330" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="T8m-CF-59L"/>
                         <constraint firstAttribute="height" constant="20" id="jak-PC-K6g"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.38431372549999998" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFO-w8-Y9o">
-                    <rect key="frame" x="0.0" y="305" width="375" height="40"/>
+                    <rect key="frame" x="0.0" y="220" width="375" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohp-TM-OUK">
                             <rect key="frame" x="15" y="10" width="187" height="20"/>
@@ -92,20 +92,46 @@
                         <constraint firstItem="ohp-TM-OUK" firstAttribute="leading" secondItem="sFO-w8-Y9o" secondAttribute="leading" constant="15" id="yKU-74-EYH"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pictures Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAw-Ud-3tZ">
+                    <rect key="frame" x="15" y="300" width="345" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="s1p-Wc-wOq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.38431372549999998" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFV-tT-0oy">
+                    <rect key="frame" x="0.0" y="330" width="375" height="297"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Tap here to add your picture memos">
+                        <color key="titleColor" red="0.38431372549999998" green="0.3921568627" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addPictureMemos:" destination="-1" eventType="touchUpInside" id="9zN-6U-RK4"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="yzN-Eb-d6h" firstAttribute="leading" secondItem="hEL-v7-Cja" secondAttribute="leading" constant="15" id="29x-8p-KRa"/>
                 <constraint firstItem="hEL-v7-Cja" firstAttribute="trailing" secondItem="B7T-La-aZH" secondAttribute="trailing" constant="30" id="2YC-9y-gfu"/>
                 <constraint firstItem="1z0-cz-G38" firstAttribute="trailing" secondItem="hEL-v7-Cja" secondAttribute="trailing" id="3cd-s0-0ab"/>
+                <constraint firstItem="hEL-v7-Cja" firstAttribute="trailing" secondItem="vAw-Ud-3tZ" secondAttribute="trailing" constant="15" id="8fw-DE-leb"/>
+                <constraint firstItem="hFV-tT-0oy" firstAttribute="leading" secondItem="hEL-v7-Cja" secondAttribute="leading" id="Inq-6w-FaO"/>
+                <constraint firstItem="vAw-Ud-3tZ" firstAttribute="leading" secondItem="hEL-v7-Cja" secondAttribute="leading" constant="15" id="Qgb-LQ-GQR"/>
                 <constraint firstItem="sFO-w8-Y9o" firstAttribute="top" secondItem="B7T-La-aZH" secondAttribute="bottom" constant="10" id="R9H-Vm-Tym"/>
                 <constraint firstItem="hEL-v7-Cja" firstAttribute="trailing" secondItem="yzN-Eb-d6h" secondAttribute="trailing" constant="30" id="RBy-KX-nzN"/>
+                <constraint firstItem="vAw-Ud-3tZ" firstAttribute="top" secondItem="sFO-w8-Y9o" secondAttribute="bottom" constant="40" id="SLj-Ao-abq"/>
                 <constraint firstItem="hEL-v7-Cja" firstAttribute="trailing" secondItem="sFO-w8-Y9o" secondAttribute="trailing" id="SQk-g6-Ho8"/>
+                <constraint firstItem="hEL-v7-Cja" firstAttribute="trailing" secondItem="hFV-tT-0oy" secondAttribute="trailing" id="Xvx-vT-jGU"/>
                 <constraint firstItem="1z0-cz-G38" firstAttribute="top" secondItem="yzN-Eb-d6h" secondAttribute="bottom" constant="10" id="ced-PU-PE7"/>
-                <constraint firstItem="B7T-La-aZH" firstAttribute="top" secondItem="1z0-cz-G38" secondAttribute="bottom" constant="125" id="fI4-Ny-hkl"/>
+                <constraint firstItem="B7T-La-aZH" firstAttribute="top" secondItem="1z0-cz-G38" secondAttribute="bottom" constant="40" id="fI4-Ny-hkl"/>
                 <constraint firstItem="sFO-w8-Y9o" firstAttribute="leading" secondItem="hEL-v7-Cja" secondAttribute="leading" id="iNV-tE-Fpl"/>
                 <constraint firstItem="1z0-cz-G38" firstAttribute="leading" secondItem="hEL-v7-Cja" secondAttribute="leading" id="lF7-Ot-JUR"/>
                 <constraint firstItem="yzN-Eb-d6h" firstAttribute="top" secondItem="hEL-v7-Cja" secondAttribute="top" constant="60" id="pSS-B1-Zwc"/>
+                <constraint firstItem="hEL-v7-Cja" firstAttribute="bottom" secondItem="hFV-tT-0oy" secondAttribute="bottom" constant="40" id="qfY-qT-xJF"/>
+                <constraint firstItem="hFV-tT-0oy" firstAttribute="top" secondItem="vAw-Ud-3tZ" secondAttribute="bottom" constant="10" id="rcn-IA-iG9"/>
                 <constraint firstItem="B7T-La-aZH" firstAttribute="leading" secondItem="hEL-v7-Cja" secondAttribute="leading" constant="15" id="usa-km-8sN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="hEL-v7-Cja"/>

@@ -11,6 +11,11 @@
 		5B47C49321D2175B00DCC0AF /* ToDoDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B47C49221D2175B00DCC0AF /* ToDoDetailTableViewController.xib */; };
 		5B51E24821D31F0B003FB25E /* Flash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51E24721D31F0B003FB25E /* Flash.swift */; };
 		5B51E24A21D32CF9003FB25E /* PlistDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51E24921D32CF9003FB25E /* PlistDocument.swift */; };
+		5B51E25121D35F10003FB25E /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51E24F21D35F10003FB25E /* PhotoCollectionViewController.swift */; };
+		5B51E25221D35F10003FB25E /* PhotoCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B51E25021D35F10003FB25E /* PhotoCollectionViewController.xib */; };
+		5B51E25521D35F43003FB25E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51E25321D35F43003FB25E /* PhotoCollectionViewCell.swift */; };
+		5B51E25621D35F43003FB25E /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B51E25421D35F43003FB25E /* PhotoCollectionViewCell.xib */; };
+		5B51E25821D3786F003FB25E /* UIImage+Collage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51E25721D3786F003FB25E /* UIImage+Collage.swift */; };
 		5B986DCA21D1D4C10071162D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B986DC921D1D4C10071162D /* AppDelegate.swift */; };
 		5B986DCF21D1D4C10071162D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B986DCD21D1D4C10071162D /* Main.storyboard */; };
 		5B986DD121D1D4C30071162D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B986DD021D1D4C30071162D /* Assets.xcassets */; };
@@ -30,6 +35,11 @@
 		5B47C49421D225FB00DCC0AF /* RSToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RSToDo.entitlements; sourceTree = "<group>"; };
 		5B51E24721D31F0B003FB25E /* Flash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flash.swift; sourceTree = "<group>"; };
 		5B51E24921D32CF9003FB25E /* PlistDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistDocument.swift; sourceTree = "<group>"; };
+		5B51E24F21D35F10003FB25E /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		5B51E25021D35F10003FB25E /* PhotoCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewController.xib; sourceTree = "<group>"; };
+		5B51E25321D35F43003FB25E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B51E25421D35F43003FB25E /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		5B51E25721D3786F003FB25E /* UIImage+Collage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Collage.swift"; sourceTree = "<group>"; };
 		5B986DC621D1D4C10071162D /* RSToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B986DC921D1D4C10071162D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B986DCE21D1D4C10071162D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +115,8 @@
 				5B986DDE21D1D7BF0071162D /* TodoListViewController.swift */,
 				5B47C49021D2163200DCC0AF /* ToDoDetailTableViewController.swift */,
 				5B47C49221D2175B00DCC0AF /* ToDoDetailTableViewController.xib */,
+				5B51E24F21D35F10003FB25E /* PhotoCollectionViewController.swift */,
+				5B51E25021D35F10003FB25E /* PhotoCollectionViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				5B986DE221D1E2830071162D /* TodoListCell.swift */,
+				5B51E25321D35F43003FB25E /* PhotoCollectionViewCell.swift */,
+				5B51E25421D35F43003FB25E /* PhotoCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -122,6 +136,7 @@
 			children = (
 				5B986DE521D207820071162D /* TodoListTableViewConfig.swift */,
 				5B51E24721D31F0B003FB25E /* Flash.swift */,
+				5B51E25721D3786F003FB25E /* UIImage+Collage.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -209,7 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B986DD421D1D4C30071162D /* LaunchScreen.storyboard in Resources */,
+				5B51E25221D35F10003FB25E /* PhotoCollectionViewController.xib in Resources */,
 				5B986DD121D1D4C30071162D /* Assets.xcassets in Resources */,
+				5B51E25621D35F43003FB25E /* PhotoCollectionViewCell.xib in Resources */,
 				5B47C49321D2175B00DCC0AF /* ToDoDetailTableViewController.xib in Resources */,
 				5B986DCF21D1D4C10071162D /* Main.storyboard in Resources */,
 			);
@@ -274,9 +291,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B47C49121D2163200DCC0AF /* ToDoDetailTableViewController.swift in Sources */,
+				5B51E25521D35F43003FB25E /* PhotoCollectionViewCell.swift in Sources */,
 				5B51E24A21D32CF9003FB25E /* PlistDocument.swift in Sources */,
 				5B986DE621D207820071162D /* TodoListTableViewConfig.swift in Sources */,
+				5B51E25821D3786F003FB25E /* UIImage+Collage.swift in Sources */,
 				5B986DDF21D1D7BF0071162D /* TodoListViewController.swift in Sources */,
+				5B51E25121D35F10003FB25E /* PhotoCollectionViewController.swift in Sources */,
 				5B986DDD21D1D7860071162D /* TodoItem.swift in Sources */,
 				5B986DCA21D1D4C10071162D /* AppDelegate.swift in Sources */,
 				5B986DE321D1E2830071162D /* TodoListCell.swift in Sources */,

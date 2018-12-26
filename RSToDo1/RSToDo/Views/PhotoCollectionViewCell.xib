@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoCollectionViewCell" customModule="RSToDo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="112" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="112" height="90"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LkY-zs-BYC">
+                        <rect key="frame" x="0.0" y="0.0" width="112" height="90"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_selected" translatesAutoresizingMaskIntoConstraints="NO" id="axQ-25-kG9">
+                        <rect key="frame" x="75" y="53" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="MSk-VI-51O"/>
+                            <constraint firstAttribute="width" constant="32" id="o2J-xE-sVi"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="axQ-25-kG9" secondAttribute="bottom" constant="5" id="3su-Pj-dpb"/>
+                <constraint firstItem="LkY-zs-BYC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8kV-Qy-oiE"/>
+                <constraint firstAttribute="bottom" secondItem="LkY-zs-BYC" secondAttribute="bottom" id="GOU-Ca-uKd"/>
+                <constraint firstItem="LkY-zs-BYC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Nhb-ge-FqE"/>
+                <constraint firstAttribute="trailing" secondItem="LkY-zs-BYC" secondAttribute="trailing" id="qee-yS-FBh"/>
+                <constraint firstAttribute="trailing" secondItem="axQ-25-kG9" secondAttribute="trailing" constant="5" id="zg3-hg-Zuq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="112" height="90"/>
+            <connections>
+                <outlet property="photoImageView" destination="LkY-zs-BYC" id="xMD-p5-YMn"/>
+                <outlet property="selectImageView" destination="axQ-25-kG9" id="LdU-bl-moc"/>
+            </connections>
+            <point key="canvasLocation" x="187.19999999999999" y="172.71364317841082"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="check_selected" width="32" height="32"/>
+    </resources>
+</document>
