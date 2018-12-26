@@ -16,7 +16,7 @@ class ToDoDetailTableViewController: UIViewController {
     
     fileprivate let todoSubject = PublishSubject<TodoItem>()
     var todo: Observable<TodoItem> {
-        return todoSubject.asObserver()
+        return todoSubject.asObservable()
     }
     var bag = DisposeBag()
     
@@ -26,6 +26,7 @@ class ToDoDetailTableViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusSwitch: UISwitch!
     @IBOutlet weak var memoButton: UIButton!
+    @IBOutlet weak var memoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class ToDoDetailTableViewController: UIViewController {
         else {
             todoItem = TodoItem(name: "", isFinished: false, pictureMemoFilename: "")
         }
-        
+
         images.asObservable().subscribe(
             onNext: { [weak self] images in
                 guard let `self` = self else { return }
@@ -57,9 +58,10 @@ class ToDoDetailTableViewController: UIViewController {
     }
     
     func setupUI() {
+        nameTextField.delegate = self
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action: #selector(clickCancel))
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(clickConfirm))
+        self.navigationItem.rightBarButtonItem?.isEnabled = todoItem.name.count > 0
     }
     
     @objc func clickCancel() {
@@ -76,7 +78,6 @@ class ToDoDetailTableViewController: UIViewController {
     }
     
     @IBAction func addPictureMemos(_ sender: UIButton) {
-        
         images.value.removeAll()
         
         let layout = UICollectionViewFlowLayout.init()
@@ -85,20 +86,45 @@ class ToDoDetailTableViewController: UIViewController {
         let photoVC = PhotoCollectionViewController.init(collectionViewLayout: layout)
         navigationController?.pushViewController(photoVC, animated: true)
         
-        _ = photoVC.selectedPhotos.subscribe(
-            onNext: { image in
-                self.images.value.append(image)
-            },
-            onDisposed: {
-                print("Finished choose photo memos.")
+        let selectedPhotos = photoVC.selectedPhotos.share()
+        _ = selectedPhotos.scan([]) {
+            (photos: [UIImage], newPhoto: UIImage) in
+            var newPhotos = photos
+            
+            if let index = newPhotos.index(where: { UIImage.isEqual(lhs: newPhoto, rhs: $0) }) {
+                newPhotos.remove(at: index)
             }
-        )
+            else {
+                newPhotos.append(newPhoto)
+            }
+            return newPhotos
+            
+            }.subscribe(
+                onNext: { images in
+                    self.images.value = images
+            },
+                onDisposed: {
+                    print("Finished choose photo memos.")
+            }).disposed(by: photoVC.bag)
         
+        _ = selectedPhotos.ignoreElements().subscribe( onCompleted: {
+            self.setMemoSectionText()
+        }).disposed(by: photoVC.bag)
         //print("\(RxSwift.Resources.total)")
     }
-    
 }
 
+extension ToDoDetailTableViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        let oldText = textField.text! as NSString
+        let newText = oldText.replacingCharacters(in: range, with: string) as NSString
+        
+        self.navigationItem.rightBarButtonItem?.isEnabled = newText.length > 0
+        return true
+    }
+}
 
 extension ToDoDetailTableViewController {
     fileprivate func setMemoBtn(bkImage: UIImage) {
@@ -111,5 +137,10 @@ extension ToDoDetailTableViewController {
         // Todo: Set the background and title of add picture memo btn
         memoButton.setBackgroundImage(nil, for: .normal)
         memoButton.setTitle("Tap here to add your picture memos", for: .normal)
+    }
+    
+    fileprivate func setMemoSectionText() {
+        guard !images.value.isEmpty else { return }
+        self.memoLabel.text = "\(images.value.count) MEMOS"
     }
 }

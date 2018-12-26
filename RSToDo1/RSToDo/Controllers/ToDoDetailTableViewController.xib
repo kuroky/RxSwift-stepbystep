@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToDoDetailTableViewController" customModule="RSToDo" customModuleProvider="target">
             <connections>
                 <outlet property="memoButton" destination="hFV-tT-0oy" id="eOd-6J-MvO"/>
+                <outlet property="memoLabel" destination="vAw-Ud-3tZ" id="hNX-EG-yNn"/>
                 <outlet property="nameTextField" destination="xsj-Re-2WM" id="gIT-CG-Sk9"/>
                 <outlet property="statusLabel" destination="ohp-TM-OUK" id="XXA-yb-Afj"/>
                 <outlet property="statusSwitch" destination="k4w-fc-DOb" id="xAG-a1-tJk"/>

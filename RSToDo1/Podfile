@@ -6,6 +6,7 @@ target 'RSToDo' do
   use_frameworks!
   pod 'RxSwift',    '4.4.0'
   pod 'RxCocoa',    '4.4.0'
+  pod 'IQKeyboardManagerSwift', '6.2.0'
   # Pods for RSToDo
 
 end

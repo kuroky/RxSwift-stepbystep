@@ -16,8 +16,9 @@ class PhotoCollectionViewController: UICollectionViewController {
     
     fileprivate let selectedPhotoSubject = PublishSubject<UIImage>()
     var selectedPhotos: Observable<UIImage> {
-        return selectedPhotoSubject.asObserver()
+        return selectedPhotoSubject.asObservable()
     }
+    let bag = DisposeBag()
     
     fileprivate lazy var photos = PhotoCollectionViewController.loadPhotos()
     fileprivate lazy var imageManager = PHCachingImageManager()
@@ -33,7 +34,7 @@ class PhotoCollectionViewController: UICollectionViewController {
         setupData()
         setupUI()
     }
-        
+    
     func setupData() {
         
     }
@@ -56,9 +57,12 @@ class PhotoCollectionViewController: UICollectionViewController {
                                   contentMode: .aspectFill,
                                   options: nil,
                                   resultHandler:
-            { (image, _) in                
-                guard let image = image else { return }
-                cell.photoImageView.image = image
+            { (image, info) in
+                guard let image = image, let info = info else { return }
+                if let isThumbnail = info[PHImageResultIsDegradedKey] as? Bool, isThumbnail {
+                    cell.photoImageView.image = image
+                    print("index\(indexPath.item)")
+                }
                 //if cell.representedAssetIdentifier == asset.localIdentifier {
                 //    cell.imageView.image = image
                 //}
@@ -76,14 +80,11 @@ class PhotoCollectionViewController: UICollectionViewController {
         let asset = photos.object(at: indexPath.item)
         
         imageManager.requestImage(for: asset, targetSize: view.frame.size, contentMode: .aspectFill, options: nil, resultHandler: { [weak self] (image, info) in
-            guard let image = image, let _ = info else { return }
-            
-            //if let isThumbnail = info[PHImageResultIsDegradedKey] as? Bool,
-                //!isThumbnail {
-                if cell.isCheckmarked == true {
-                    self?.selectedPhotoSubject.onNext(image)
-                }
-            //}
+            guard let image = image, let info = info else { return }
+
+            if let isThumbnail = info[PHImageResultIsDegradedKey] as? Bool, !isThumbnail {
+                self?.selectedPhotoSubject.onNext(image)
+            }
         })
     }
 }
@@ -97,7 +98,7 @@ extension PhotoCollectionViewController {
     
     static func loadPhotos() -> PHFetchResult<PHAsset> {
         let options = PHFetchOptions()
-        options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         return PHAsset.fetchAssets(with: options)
     }
 }
