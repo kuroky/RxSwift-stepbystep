@@ -1,0 +1,6 @@
+framework module Pods_RSAppTest {
+  umbrella header "Pods-RSAppTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
