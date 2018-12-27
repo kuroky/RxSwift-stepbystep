@@ -20,7 +20,7 @@ class PhotoCollectionViewController: UICollectionViewController {
     }
     let bag = DisposeBag()
     
-    fileprivate lazy var photos = PhotoCollectionViewController.loadPhotos()
+    fileprivate var photos = PHFetchResult<PHAsset>()
     fileprivate lazy var imageManager = PHCachingImageManager()
     
     fileprivate lazy var thumbnailsize: CGSize = {
@@ -36,7 +36,30 @@ class PhotoCollectionViewController: UICollectionViewController {
     }
     
     func setupData() {
+        let isAuthorized = PHPhotoLibrary.isAuthorized.share()
         
+        isAuthorized
+            .skipWhile { $0 == false }
+            .take(1)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { _ in
+                self.photos = PhotoCollectionViewController.loadPhotos()
+                self.collectionView.reloadData()
+            })
+            .disposed(by: bag)
+        
+        isAuthorized
+            .distinctUntilChanged() // 忽略重复
+            .takeLast(1)
+            .filter { $0 == false }
+            .subscribe(onNext: { _ in
+                self.flash(title: "Cannot access your photo library",
+                           message: "You can authorize access from the Settings.",
+                           callback: { [weak self] _ in
+                    self?.navigationController?.popViewController(animated: true)
+                })
+            })
+            .disposed(by: bag)
     }
     
     func setupUI () {
@@ -61,7 +84,6 @@ class PhotoCollectionViewController: UICollectionViewController {
                 guard let image = image, let info = info else { return }
                 if let isThumbnail = info[PHImageResultIsDegradedKey] as? Bool, isThumbnail {
                     cell.photoImageView.image = image
-                    print("index\(indexPath.item)")
                 }
                 //if cell.representedAssetIdentifier == asset.localIdentifier {
                 //    cell.imageView.image = image

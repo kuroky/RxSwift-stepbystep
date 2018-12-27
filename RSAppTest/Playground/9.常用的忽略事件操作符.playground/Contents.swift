@@ -18,7 +18,7 @@ func example() {
 example()
 
 // ignore
-func example1() {
+func ignore() {
     let tasks = PublishSubject<String>()
     let bag = DisposeBag()
     
@@ -33,10 +33,10 @@ func example1() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example1()
+ignore()
 
 // skip
-func example2() {
+func skip() {
     let tasks = PublishSubject<String>()
     let bag = DisposeBag()
     
@@ -51,29 +51,29 @@ func example2() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example2()
+skip()
 
 // skipWhile/skipUntil
-func example3() {
-    let tasks = PublishSubject<String>()
+func skipWhile() {
+    let tasks = PublishSubject<Bool>()
     let bag = DisposeBag()
     
     tasks.skipWhile {
-            $0 != "T2"
+            $0 == false // 跳过头几个元素 直到表达式为否
         }
         .subscribe{ print($0) }
         .disposed(by: bag)
     
     print("\(#function) begin")
-    tasks.onNext("T1")
-    tasks.onNext("T2")
-    tasks.onNext("T3")
+    tasks.onNext(false)
+    tasks.onNext(true)
+    tasks.onNext(false)
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example3()
+skipWhile()
 
-func example4() {
+func skipUntil() {
     let tasks = PublishSubject<String>()
     let bossIsAnary = PublishSubject<Void>()
     let bag = DisposeBag()
@@ -90,7 +90,7 @@ func example4() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example4()
+skipUntil()
 
 // 忽略连续重复事件
 func example5() {

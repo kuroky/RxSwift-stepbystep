@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B39FC7521D46B4700190EDC /* PHPhotoLibrary+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B39FC7421D46B4700190EDC /* PHPhotoLibrary+Rx.swift */; };
 		5B47C49121D2163200DCC0AF /* ToDoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47C49021D2163200DCC0AF /* ToDoDetailTableViewController.swift */; };
 		5B47C49321D2175B00DCC0AF /* ToDoDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B47C49221D2175B00DCC0AF /* ToDoDetailTableViewController.xib */; };
 		5B51E24821D31F0B003FB25E /* Flash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51E24721D31F0B003FB25E /* Flash.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		123EFB2716889FE142CFF41D /* Pods-RSToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSToDo.release.xcconfig"; path = "Target Support Files/Pods-RSToDo/Pods-RSToDo.release.xcconfig"; sourceTree = "<group>"; };
 		34F3DC018729B42EE1F1A5D5 /* Pods-RSToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSToDo.debug.xcconfig"; path = "Target Support Files/Pods-RSToDo/Pods-RSToDo.debug.xcconfig"; sourceTree = "<group>"; };
+		5B39FC7421D46B4700190EDC /* PHPhotoLibrary+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Rx.swift"; sourceTree = "<group>"; };
 		5B47C49021D2163200DCC0AF /* ToDoDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailTableViewController.swift; sourceTree = "<group>"; };
 		5B47C49221D2175B00DCC0AF /* ToDoDetailTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoDetailTableViewController.xib; sourceTree = "<group>"; };
 		5B47C49421D225FB00DCC0AF /* RSToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RSToDo.entitlements; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				5B986DE521D207820071162D /* TodoListTableViewConfig.swift */,
 				5B51E24721D31F0B003FB25E /* Flash.swift */,
+				5B39FC7421D46B4700190EDC /* PHPhotoLibrary+Rx.swift */,
 				5B51E25721D3786F003FB25E /* UIImage+Collage.swift */,
 			);
 			path = Helper;
@@ -302,6 +305,7 @@
 				5B986DDD21D1D7860071162D /* TodoItem.swift in Sources */,
 				5B986DCA21D1D4C10071162D /* AppDelegate.swift in Sources */,
 				5B986DE321D1E2830071162D /* TodoListCell.swift in Sources */,
+				5B39FC7521D46B4700190EDC /* PHPhotoLibrary+Rx.swift in Sources */,
 				5B51E24821D31F0B003FB25E /* Flash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

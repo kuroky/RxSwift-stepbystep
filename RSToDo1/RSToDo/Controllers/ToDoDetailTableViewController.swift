@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class ToDoDetailTableViewController: UIViewController {
     
@@ -61,7 +62,7 @@ class ToDoDetailTableViewController: UIViewController {
         nameTextField.delegate = self
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "Cancel", style: .plain, target: self, action: #selector(clickCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(clickConfirm))
-        self.navigationItem.rightBarButtonItem?.isEnabled = todoItem.name.count > 0
+        self.navigationItem.rightBarButtonItem?.isEnabled = todoItem.name.count > 0        
     }
     
     @objc func clickCancel() {

@@ -23,6 +23,7 @@ class TodoListViewController: UIViewController {
     
     var todoItems = Variable<[TodoItem]>([])
     
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clearButton: UIButton!
     

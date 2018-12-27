@@ -2,7 +2,7 @@ import UIKit
 import RxSwift
 
 // index
-func example() {
+func elementAt() {
     let tasks = PublishSubject<String>()
     let bag = DisposeBag()
     
@@ -17,10 +17,10 @@ func example() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example()
+elementAt()
 
 // filter
-func example1() {
+func filter() {
     let tasks = PublishSubject<String>()
     let bag = DisposeBag()
     
@@ -35,10 +35,10 @@ func example1() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example1()
+filter()
 
 // take 前两个事件
-func example2() {
+func take() {
     let tasks = PublishSubject<String>()
     let bag = DisposeBag()
     
@@ -53,14 +53,14 @@ func example2() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example2()
+take()
 
 // takeWhile/enumerated().takeWhile
-func example3() {
+func takeWhile() {
     let tasks = PublishSubject<String>()
     let bag = DisposeBag()
     
-    tasks.takeWhile{ $0 != "T3" }
+    tasks.takeWhile{ $0 != "T1" } 
         .subscribe{ print($0) }
         .disposed(by: bag)
     
@@ -71,9 +71,9 @@ func example3() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example3()
+takeWhile()
 
-func example4() {
+func enumerated() {
     let tasks = PublishSubject<String>()
     let bag = DisposeBag()
     
@@ -90,10 +90,10 @@ func example4() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example4()
+enumerated()
 
 // takeUntil
-func example5() {
+func takeUntil() {
     let tasks = PublishSubject<String>()
     let bossHasGone = PublishSubject<Void>()
     let bag = DisposeBag()
@@ -110,5 +110,5 @@ func example5() {
     tasks.onCompleted()
     print("\(#function) end \n")
 }
-example5()
+takeUntil()
 
