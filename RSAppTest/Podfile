@@ -6,6 +6,7 @@ target 'RSAppTest' do
   use_frameworks!
   pod 'RxSwift',    '4.4.0'
   pod 'RxCocoa',    '4.4.0'
+  pod 'Alamofire',      '4.7.3'
   # Pods for RSAppTest
 
 end
