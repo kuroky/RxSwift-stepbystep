@@ -21,6 +21,8 @@
 		484609060664BFF0E57D7EA9 /* Pods-RSAppTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSAppTest.debug.xcconfig"; path = "Target Support Files/Pods-RSAppTest/Pods-RSAppTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5B140B4521D5BEFB00E1226E /* 15.为什么RxSwift也需要flatMap .playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "15.为什么RxSwift也需要flatMap .playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5B140B6F21D60EFF00E1226E /* 18.如何合并Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "18.如何合并Observables.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5B140B7021D61ADE00E1226E /* 19.如何合并Observables中的事件.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "19.如何合并Observables中的事件.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5B140B7121D6268D00E1226E /* 20.如何在不同的Observables之间跳转.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "20.如何在不同的Observables之间跳转.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5B39FC7621D47E8600190EDC /* 14.了解常用的transform operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "14.了解常用的transform operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5B51E24D21D350AF003FB25E /* 9.常用的忽略事件操作符.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9.常用的忽略事件操作符.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5B51E24E21D3576B003FB25E /* 10.常用的获取事件操作符.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10.常用的获取事件操作符.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -98,6 +100,8 @@
 				5B39FC7621D47E8600190EDC /* 14.了解常用的transform operators.playground */,
 				5B140B4521D5BEFB00E1226E /* 15.为什么RxSwift也需要flatMap .playground */,
 				5B140B6F21D60EFF00E1226E /* 18.如何合并Observables.playground */,
+				5B140B7021D61ADE00E1226E /* 19.如何合并Observables中的事件.playground */,
+				5B140B7121D6268D00E1226E /* 20.如何在不同的Observables之间跳转.playground */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
