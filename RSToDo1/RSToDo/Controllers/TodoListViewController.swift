@@ -39,6 +39,10 @@ class TodoListViewController: UIViewController {
             [weak self] todos in
             self?.updateUI(todos: todos)
         }).disposed(by: bag)
+        
+        flash(title: "1", message: "1") { action in
+            
+        }
     }
     
     func setupData() {

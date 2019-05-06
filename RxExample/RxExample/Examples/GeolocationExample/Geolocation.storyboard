@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xrs-0E-lBP">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Geolocation View Controller-->
+        <scene sceneID="8C1-c0-d58">
+            <objects>
+                <viewController id="xrs-0E-lBP" customClass="GeolocationViewController" customModule="RxExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yhj-Sz-gAm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It seems that geolocation is enabled" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8c-oy-2nd">
+                                <rect key="frame" x="50" y="144" width="314" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ums-JQ-6fw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZT-ON-EBm">
+                                <rect key="frame" x="50" y="244" width="314" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="9RI-R7-DqP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can disable Geolocation on app's preferences and come back to the app to see what happens" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAc-4o-JdJ">
+                                <rect key="frame" x="50" y="344" width="314" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="FXI-3z-bvU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YF-NH-ekZ">
+                                <rect key="frame" x="50" y="444" width="314" height="45"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.63529411759999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="MTN-wC-tgG"/>
+                                </constraints>
+                                <state key="normal" title="OPEN APP PREFERENCES">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XRR-FU-qsx" firstAttribute="trailing" secondItem="6YF-NH-ekZ" secondAttribute="trailing" constant="50" id="7qK-Km-bay"/>
+                            <constraint firstItem="iZT-ON-EBm" firstAttribute="top" secondItem="m8c-oy-2nd" secondAttribute="bottom" constant="40" id="9Nv-OP-WH1"/>
+                            <constraint firstItem="XRR-FU-qsx" firstAttribute="trailing" secondItem="iZT-ON-EBm" secondAttribute="trailing" constant="50" id="O0r-6u-e3V"/>
+                            <constraint firstItem="m8c-oy-2nd" firstAttribute="top" secondItem="XRR-FU-qsx" secondAttribute="top" constant="100" id="PAl-xS-UWG"/>
+                            <constraint firstItem="iZT-ON-EBm" firstAttribute="leading" secondItem="XRR-FU-qsx" secondAttribute="leading" constant="50" id="aNY-9r-CkS"/>
+                            <constraint firstItem="6YF-NH-ekZ" firstAttribute="leading" secondItem="XRR-FU-qsx" secondAttribute="leading" constant="50" id="f59-Sc-bbo"/>
+                            <constraint firstItem="XRR-FU-qsx" firstAttribute="trailing" secondItem="m8c-oy-2nd" secondAttribute="trailing" constant="50" id="oP4-yf-GdG"/>
+                            <constraint firstItem="6YF-NH-ekZ" firstAttribute="top" secondItem="XAc-4o-JdJ" secondAttribute="bottom" constant="20" id="p0x-Al-YYE"/>
+                            <constraint firstItem="XAc-4o-JdJ" firstAttribute="top" secondItem="iZT-ON-EBm" secondAttribute="bottom" constant="40" id="pnU-Gp-8dE"/>
+                            <constraint firstItem="XAc-4o-JdJ" firstAttribute="leading" secondItem="XRR-FU-qsx" secondAttribute="leading" constant="50" id="qA4-IK-qFW"/>
+                            <constraint firstItem="m8c-oy-2nd" firstAttribute="leading" secondItem="XRR-FU-qsx" secondAttribute="leading" constant="50" id="qbg-uf-7cf"/>
+                            <constraint firstItem="XRR-FU-qsx" firstAttribute="trailing" secondItem="XAc-4o-JdJ" secondAttribute="trailing" constant="50" id="z7X-N5-roj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XRR-FU-qsx"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="iZT-ON-EBm" id="FGg-eF-nLv"/>
+                        <outlet property="noGeolocationView" destination="c31-8f-2tV" id="fgE-gI-N6E"/>
+                        <outlet property="openBtn1" destination="jjP-w0-xWS" id="HRk-4J-PtK"/>
+                        <outlet property="openBtn2" destination="6YF-NH-ekZ" id="TfY-eg-M5L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JO2-Dg-tf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="c31-8f-2tV">
+                    <rect key="frame" x="0.0" y="0.0" width="422" height="627"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geolocation is not enabled for this app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3y-KP-PZ3">
+                            <rect key="frame" x="30" y="104" width="362" height="64.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                            <color key="textColor" red="0.91421842580000001" green="0.2926974893" blue="0.21385452150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enable it in the app preferences" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIx-I9-9XI">
+                            <rect key="frame" x="50" y="198.5" width="322" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjP-w0-xWS">
+                            <rect key="frame" x="60" y="326.5" width="302" height="45"/>
+                            <color key="backgroundColor" red="0.1333333333" green="0.63529411759999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="HF6-xS-zOC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="OPEN APP PREFERENCES">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="MD7-Pj-VQw" firstAttribute="trailing" secondItem="bIx-I9-9XI" secondAttribute="trailing" constant="50" id="5eE-Nf-tDf"/>
+                        <constraint firstItem="z3y-KP-PZ3" firstAttribute="leading" secondItem="MD7-Pj-VQw" secondAttribute="leading" constant="30" id="5yn-Hl-jxm"/>
+                        <constraint firstItem="MD7-Pj-VQw" firstAttribute="trailing" secondItem="jjP-w0-xWS" secondAttribute="trailing" constant="60" id="FI9-8j-Kme"/>
+                        <constraint firstItem="jjP-w0-xWS" firstAttribute="leading" secondItem="MD7-Pj-VQw" secondAttribute="leading" constant="60" id="Hte-R9-XXR"/>
+                        <constraint firstItem="bIx-I9-9XI" firstAttribute="top" secondItem="z3y-KP-PZ3" secondAttribute="bottom" constant="30" id="O9N-9C-GTu"/>
+                        <constraint firstItem="z3y-KP-PZ3" firstAttribute="top" secondItem="MD7-Pj-VQw" secondAttribute="top" constant="60" id="Oag-DH-XJV"/>
+                        <constraint firstAttribute="trailing" secondItem="z3y-KP-PZ3" secondAttribute="trailing" constant="30" id="hQ3-zg-876"/>
+                        <constraint firstItem="bIx-I9-9XI" firstAttribute="leading" secondItem="MD7-Pj-VQw" secondAttribute="leading" constant="50" id="iSw-BT-zun"/>
+                        <constraint firstItem="jjP-w0-xWS" firstAttribute="top" secondItem="bIx-I9-9XI" secondAttribute="bottom" constant="80" id="vRV-Ce-A4q"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="MD7-Pj-VQw"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="-52.232142857142854"/>
+        </scene>
+    </scenes>
+</document>
