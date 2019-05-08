@@ -10,8 +10,6 @@ import UIKit
 import RxSwift
 import Alamofire
 
-
-
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
