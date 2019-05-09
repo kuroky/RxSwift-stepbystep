@@ -4,7 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'ThinkingInRxSwift' do
-    pod 'RxSwift',    '~> 2.0'
-	pod 'RxCocoa',    '~> 2.0'
+    pod 'RxSwift',    '4.5.0'
+	pod 'RxCocoa',    '4.5.0'
 end
 

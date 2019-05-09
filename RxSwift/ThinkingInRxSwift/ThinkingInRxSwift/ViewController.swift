@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITextFieldDelegate {
-    func textField(textField: UITextField,
+    private func textField(textField: UITextField,
                    shouldChangeCharactersInRange range: NSRange,
                 replacementString string: String) -> Bool {
         // 1. Map user input string to Int

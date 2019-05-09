@@ -24,9 +24,9 @@ class ViewController: UIViewController {
         print(evenArray)
         self.userInput.delegate = self
         
-        _ = self.rxUserInput.rx_text
-            .map { (input: String) -> Int in
-                if let lastChar = input.characters.last {
+        _ = self.rxUserInput.rx.text
+            .map { (input: String?) -> Int in
+                if let lastChar = input!.last {
                     if let n = Int(String(lastChar)) {
                         return n
                     }
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                 return -1
             }
             .filter { $0 % 2 == 0 }
-            .subscribeNext { print($0) }
+            .subscribe { print($0) }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,9 +45,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITextFieldDelegate {
-    func textField(textField: UITextField,
-                   shouldChangeCharactersInRange range: NSRange,
-                replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == self.userInput {
             // 1. Map user input string to Int
             if let n = Int(string) {
