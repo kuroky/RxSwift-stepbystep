@@ -51,8 +51,8 @@ class ViewController: UIViewController {
                 return input.reduce(true, { (valid1, valid2) -> Bool in
                     valid1 && valid2
                 })
-            }.subscribe (onNext: {
-                self.register.isEnabled = $0
+            }.subscribe (onNext: { _ in
+                //self.register.isEnabled = $0
             }).disposed(by: self.bag)
     }
 
